@@ -1,0 +1,294 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "0484e444",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[3 4 5 6 7]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np \n",
+    "arr=np.array([1,2,3,4,5])\n",
+    "artwo=np.array([2,2,2,2,2])\n",
+    "print(arr+artwo)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "4c817ee3",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 27,  54,  81, 108, 135])"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr=arr*3\n",
+    "arr"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "1cbcb271",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([13.5, 27. , 40.5, 54. , 67.5])"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr=arr/2\n",
+    "arr"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "4b7573f7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[5 4 6 3 2 1]\n",
+      "[1 2 3 4 5]\n",
+      "[5 2 1 1 1]\n",
+      "5\n",
+      "The element with the max frequency is 1\n",
+      "The indices of the elements with max frequency are:\n",
+      "0 \n",
+      "5 \n",
+      "7 \n",
+      "8 \n",
+      "9 \n"
+     ]
+    }
+   ],
+   "source": [
+    "# Question 2:\n",
+    "# (i) reverse numpy array\n",
+    "a=np.array([1,2,3,6,4,5])\n",
+    "a=a[::-1]\n",
+    "print(a)\n",
+    "#find the most frequent value and indice(s) in foll:\n",
+    "b=np.array([1,2,3,4,5,1,2,1,1,1])\n",
+    "values,counts=np.unique(b,return_counts=True)\n",
+    "print(values)\n",
+    "print(counts)\n",
+    "max_frequency=max(counts)\n",
+    "print(max_frequency)\n",
+    "max_element=-1\n",
+    "for value,count in zip(values,counts):\n",
+    "    if count==max_frequency:\n",
+    "        max_element=value\n",
+    "print(f\"The element with the max frequency is {max_element}\")\n",
+    "print(f\"The indices of the elements with max frequency are:\")\n",
+    "for i in range(0,len(b)):\n",
+    "    if b[i]==max_element:\n",
+    "        print(f\"{i} \")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "bc32a823",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 2 3 4]\n",
+      "[3 2 3 2]\n",
+      "3\n",
+      "The element with the max frequency is 3\n",
+      "The indices of the elements with max frequency are:\n",
+      "4 \n",
+      "8 \n",
+      "9 \n"
+     ]
+    }
+   ],
+   "source": [
+    "#find the most frequent value and indice(s) in foll:\n",
+    "c=np.array([1, 1, 1, 2, 3, 4, 2, 4, 3, 3])\n",
+    "values,counts=np.unique(c,return_counts=True)\n",
+    "print(values)\n",
+    "print(counts)\n",
+    "max_frequency=max(counts)\n",
+    "print(max_frequency)\n",
+    "max_element=-1\n",
+    "for value,count in zip(values,counts):\n",
+    "    if count==max_frequency:\n",
+    "        max_element=value\n",
+    "print(f\"The element with the max frequency is {max_element}\")\n",
+    "print(f\"The indices of the elements with max frequency are:\")\n",
+    "for i in range(0,len(c)):\n",
+    "    if c[i]==max_element:\n",
+    "        print(f\"{i} \")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "f2d0ccdb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "20\n",
+      "70\n"
+     ]
+    }
+   ],
+   "source": [
+    "arr2=np.array([[10, 20, 30], [40, 50, 60], [70, 80, 90]])\n",
+    "print(arr2[0,1])\n",
+    "print(arr2[2,0])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "f15a0984",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ 10.    13.75  17.5   21.25  25.    28.75  32.5   36.25  40.    43.75\n",
+      "  47.5   51.25  55.    58.75  62.5   66.25  70.    73.75  77.5   81.25\n",
+      "  85.    88.75  92.5   96.25 100.  ]\n",
+      "1\n",
+      "(25,)\n",
+      "25\n",
+      "float64\n",
+      "25\n",
+      "200\n",
+      "[ 10.    13.75  17.5   21.25  25.    28.75  32.5   36.25  40.    43.75\n",
+      "  47.5   51.25  55.    58.75  62.5   66.25  70.    73.75  77.5   81.25\n",
+      "  85.    88.75  92.5   96.25 100.  ]\n",
+      "[ 10.    13.75  17.5   21.25  25.    28.75  32.5   36.25  40.    43.75\n",
+      "  47.5   51.25  55.    58.75  62.5   66.25  70.    73.75  77.5   81.25\n",
+      "  85.    88.75  92.5   96.25 100.  ]\n"
+     ]
+    }
+   ],
+   "source": [
+    "ekman=np.linspace(10,100,num=25)\n",
+    "print(ekman)\n",
+    "print(ekman.ndim)\n",
+    "print(ekman.shape)\n",
+    "print(len(ekman))\n",
+    "print(ekman.dtype)\n",
+    "print(ekman.size)\n",
+    "print(ekman.nbytes)\n",
+    "print(ekman.T)\n",
+    "print(np.transpose(ekman))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "dac32631",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "43.333333333333336\n",
+      "37.5\n",
+      "10\n",
+      "90\n",
+      "[10 15 20 30 35 40 50 60 70 80 90]\n"
+     ]
+    }
+   ],
+   "source": [
+    "ucs420_ekman=np.array([[10, 20, 30, 40], [50, 60, 70, 80], [90, 15, 20, 35]])\n",
+    "print(ucs420_ekman.mean())\n",
+    "print(np.median(ucs420_ekman))\n",
+    "print(np.min(ucs420_ekman))\n",
+    "print(np.max(ucs420_ekman))\n",
+    "print(np.unique(ucs420_ekman))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "1749e6b7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[10 20 30]\n",
+      " [40 50 60]\n",
+      " [70 80 90]\n",
+      " [15 20 35]]\n",
+      "[[10 20 30 40]\n",
+      " [50 60 70 80]\n",
+      " [90 15 20 35]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "reshaped_ucs420_ekman=ucs420_ekman.reshape(4,3)\n",
+    "resized_ucs420_ekman=np.resize(ucs420_ekman,(2,3))\n",
+    "print(reshaped_ucs420_ekman)\n",
+    "print(ucs420_ekman)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
